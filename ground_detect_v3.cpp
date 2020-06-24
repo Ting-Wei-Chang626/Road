@@ -181,7 +181,7 @@ Mat Image::compute_first_Homography(Mat a, Mat b){
     //-- Draw only "good" matches (i.e. whose distance is less than 3*min_dist )
     std::vector< DMatch > good_matches;
 
-    const float ratio_thresh = 0.6f;
+    const float ratio_thresh = 0.8f;
     for (size_t i = 0; i < matches.size(); i++)
     {
         if (matches[i][0].distance < ratio_thresh * matches[i][1].distance)
@@ -244,7 +244,7 @@ void Image::set_outlier_inlier(Mat img1, Mat img2, Mat h, double radius=15){
     std::vector< DMatch > good_matches;
 
     //-- Filter matches using the Lowe's ratio test
-    const float ratio_thresh = 0.6f;
+    const float ratio_thresh = 0.8f;
     for (size_t i = 0; i < matches.size(); i++)
     {
         if (matches[i][0].distance < ratio_thresh * matches[i][1].distance)
