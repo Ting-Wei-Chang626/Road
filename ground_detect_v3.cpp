@@ -93,7 +93,7 @@ class Image{
         void draw_outlier(vector<Point2f> toDraw){
             for (auto pts=toDraw.begin(); pts!=toDraw.end(); pts++){
                 img_draw = img;
-                cv::circle(img_draw, cvPoint((int)(pts->x), (int)(pts->y)), 3, (0,255,0), 3);
+                cv::circle(img_draw, cvPoint((int)(pts->x), (int)(pts->y)), 3, (0,0,255), 3);
             }
         }
 };
