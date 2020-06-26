@@ -178,7 +178,7 @@ Mat Image::compute_first_Homography(Mat a, Mat b){
     matcher->knnMatch( des3, des1, matches, 2);
 
  
-    //-- Draw only "good" matches (i.e. whose distance is less than 3*min_dist )
+    // -Filter matches using the Lowe's ratio test
     std::vector< DMatch > good_matches;
 
     const float ratio_thresh = 0.7f;
